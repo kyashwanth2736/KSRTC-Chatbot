@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KSRTC Abhimanyu</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="chatbot-container">
+        <header class="ksrtc-header">
+            <div class="header-left">
+                <div class="avatar-box">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4140/4140037.png" alt="Abhimanyu">
+                    <span class="online-indicator"></span>
+                </div>
+                <div class="header-titles">
+                    <h1 id="header-main">Ask Abhimanyu</h1>
+                    <p id="header-sub">ಸಹಾಯ ಬೇಕೇ? ಅಭಿಮನ್ಯುಗೆ ಕೇಳಿ</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <select id="langSwitch" onchange="changeLanguage()">
+                    <option value="en">English</option>
+                    <option value="kn">ಕನ್ನಡ</option>
+                </select>
+                <img src="logo.png" class="ksrtc-logo-header" alt="KSRTC Logo">
+            </div>
+        </header>
+
+        <main class="chat-window" id="chatDisplay">
+            <div class="bot-msg-container animate-in">
+                <div class="bot-msg" id="welcome-msg">
+                    I am <b>Abhimanyu</b>, your Personal Digital Assistant. I can help you in getting answer to your queries related to KSRTC.
+                </div>
+            </div>
+
+            <div class="faq-card animate-in">
+                <div class="faq-header" id="faq-title">Frequently Asked Questions</div>
+                <div class="faq-list">
+                    <button onclick="handleQuickAction('cancel')">Can I cancel my ticket online?</button>
+                    <button onclick="handleQuickAction('pnr')">How to check the PNR status of the ticket?</button>
+                    <button onclick="handleQuickAction('booking')">How KSRTC ticket can be booked?</button>
+                    <button onclick="handleQuickAction('refund')">How to check refund status?</button>
+                </div>
+            </div>
+        </main>
+
+        <div class="slide-menu" id="slideMenu">
+            <div class="menu-grid">
+                <div class="menu-item" onclick="handleQuickAction('pnr')">
+                    <span>🔍</span> PNR Enquiry
+                </div>
+                <div class="menu-item" onclick="handleQuickAction('cancel')">
+                    <span>❌</span> Cancel Ticket
+                </div>
+                <div class="menu-item">
+                    <a href="tel:08026252625" style="text-decoration:none; color:inherit; display:flex; align-items:center; gap:10px; width:100%;">
+                        <span>📞</span> Call Support (080-26252625)
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <footer class="chat-footer">
+            <button class="hamburger-btn" onclick="toggleMenu()">☰</button>
+            <div class="input-container">
+                <input type="text" id="userInput" placeholder="Type your query here...">
+                <button id="sendBtn" onclick="processInput()">➤</button>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
